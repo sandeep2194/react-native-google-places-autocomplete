@@ -684,35 +684,35 @@ export const GooglePlacesAutocomplete = forwardRef((props, ref) => {
     if (!props.keepResultsAfterBlur) {
       setListViewDisplayed(false);
     }
-    inputRef?.current?.blur();
+    // inputRef?.current?.blur();
   };
 
   const _onFocus = () => setListViewDisplayed(true);
 
-  const _renderPoweredLogo = () => {
-    if (!_shouldShowPoweredLogo()) {
-      return null;
-    }
+  // const _renderPoweredLogo = () => {
+  //   if (!_shouldShowPoweredLogo()) {
+  //     return null;
+  //   }
 
-    return (
-      <View
-        style={[
-          props.suppressDefaultStyles ? {} : defaultStyles.row,
-          defaultStyles.poweredContainer,
-          props.styles.poweredContainer,
-        ]}
-      >
-        <Image
-          style={[
-            props.suppressDefaultStyles ? {} : defaultStyles.powered,
-            props.styles.powered,
-          ]}
-          resizeMode='contain'
-          source={require('./images/powered_by_google_on_white.png')}
-        />
-      </View>
-    );
-  };
+  //   return (
+  //     <View
+  //       style={[
+  //         props.suppressDefaultStyles ? {} : defaultStyles.row,
+  //         defaultStyles.poweredContainer,
+  //         props.styles.poweredContainer,
+  //       ]}
+  //     >
+  //       <Image
+  //         style={[
+  //           props.suppressDefaultStyles ? {} : defaultStyles.powered,
+  //           props.styles.powered,
+  //         ]}
+  //         resizeMode='contain'
+  //         source={require('./images/powered_by_google_on_white.png')}
+  //       />
+  //     </View>
+  //   );
+  // };
 
   const _shouldShowPoweredLogo = () => {
     if (!props.enablePoweredByContainer || dataSource.length === 0) {
@@ -775,7 +775,7 @@ export const GooglePlacesAutocomplete = forwardRef((props, ref) => {
             props.renderHeaderComponent &&
             props.renderHeaderComponent(stateText)
           }
-          ListFooterComponent={_renderPoweredLogo}
+          // ListFooterComponent={_renderPoweredLogo}
           {...props}
         />
       );
